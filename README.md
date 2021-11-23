@@ -99,7 +99,7 @@ I have installed Filebeat and Metricbeats onto the ELK server to monitor Web-1, 
 
 These Beats allow us to collect the following information from each machine:
 Filebeat is able to monitor system activity such as logins, failure and accepted.
-![Filebeat Example](/Images/Filebeat_example.png "Filebeat example")
+[Filebeat Example](/Images/Filebeat_example.png)
 Metricbeats is able to monitor cpu and memory usage to determine what services could be using too many services or if someone is attempting a malicious attack. 
 
 ### Using the Playbook
