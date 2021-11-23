@@ -11,6 +11,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - _[Elk Install](Ansible/elk.yml)_
   - _[FileBeat](Ansible/filebeat.yml)_
   - _[MetricBeat](Ansible/metric_playbook.yml)_
+  - _[DVWA SETUP](Ansible/dvwa_setup.yml)_
 
 This document contains the following details:
 - Description of the Topologu
