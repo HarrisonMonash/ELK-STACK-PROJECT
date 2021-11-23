@@ -36,7 +36,6 @@ Filebeat is used to monitor for system logs and forward any changes to the Elast
 Metricbeat periodically collects metrics from the system and services running on the sever. This also forwards the data to Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name      | Function | IP Address | Operating System |
 |-----------|----------|------------|------------------|
@@ -57,7 +56,7 @@ Add whitelisted IP addresses:
 My IP: 121.200.7.39
 
 Machines within the network can only be accessed by jumpbox.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Which machine did you allow to access your ELK VM? What was its IP address?
 Jumpbox IP: 191.239.178.113
 Jumpbox Private IP: 10.0.0.4
 
@@ -66,8 +65,11 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | 121.200.7.39         |
-| Web-1    |                     |                      |
-| Web-2    |                     |                      |
+| Web-1    | No                  | 10.0.0.4             |
+| Web-2    | No                  | 10.0.0.4             |
+| Web-3.   | No                  | 10.0.0.4             |
+| ELK      | No                  | 
+
 
 ### Elk Configuration
 
@@ -80,7 +82,7 @@ The playbook implements the following tasks:
 - Install Pyhton3_pip
 - Docker Module
 - Increase the virtual memory. When installing the ELK server in the elk.yml file using the command sysctl -w vm.max_map_count=262144, will assist in the server to launch and stabilise. 
-- Launching the docker, elk
+- Launching the docker, ELK and specifying the ports required to access.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -88,7 +90,6 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
 Web-1: 10.0.0.5
 Web-2: 10.0.0.6
 Web-3:10.0.0.7
@@ -112,15 +113,14 @@ SSH into the control node and follow the steps below:
 - Update the _____ file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-  Copy the elk_install.yml to /etc/ansible/elk_install.yml
+- Answer the following questions to fill in the blanks:
+- Which file is the playbook? Where do you copy it?
+  The file is elk_install.yml and you copy it to /etc/ansible/elk_install.yml
 
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
+- Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
  Update the hosts file to include the elk server and it's internal IP with the following command: 
 [ELK]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
 - _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+http://20.92.81.58:5601/app/kibana#/home . This URL has the ELK server IP and the open port of 5601 on Kibana.
