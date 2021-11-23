@@ -122,5 +122,5 @@ SSH into the control node and follow the steps below:
 [ELK]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Which URL do you navigate to in order to check that the ELK server is running?
 http://20.92.81.58:5601/app/kibana#/home . This URL has the ELK server IP and the open port of 5601 on Kibana.
